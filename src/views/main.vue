@@ -4,7 +4,7 @@
       <TOP></TOP>
     </el-header>
     <el-container>
-      <el-aside style="box-shadow: var(--el-box-shadow-dark);background-color: #FAFAFA;" width="240px">
+      <el-aside style="box-shadow: var(--el-box-shadow-dark);background-color: #545c64;" width="240px">
         <LEFT></LEFT>
       </el-aside>
       <el-main>

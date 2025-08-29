@@ -1,8 +1,8 @@
 <template>
 
   <el-menu
-      active-text-color="#606266"
-      background-color="#FAFAFA"
+      active-text-color="#ffd04b"
+      background-color="#545c64"
       text-color="#909399"
       router
       unique-opened
