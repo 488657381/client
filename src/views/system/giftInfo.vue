@@ -16,7 +16,7 @@
   礼物价格
   礼物图片
   礼物折算-->
-  <el-table height="450" :data="tableData.tableList" style="width: 100%">
+  <el-table height="550" :data="tableData.tableList" style="width: 100%" >
     <el-table-column prop="giftId" fixed label="ID" width="70" align="center"/>
     <el-table-column prop="giftName" label="礼物名称" width="100" align="center"/>
     <el-table-column prop="giftPrice" label="礼物价格" width="140" align="center">
@@ -58,16 +58,18 @@
 
   </el-table>
 
-  <el-pagination
-      v-model:current-page="tableData.pageInfo.page"
-      v-model:page-size="tableData.pageInfo.pageSize"
-      :total="tableData.pageInfo.total"
-      :page-sizes="[3, 6, 9]"
-      layout="total, sizes, prev, pager, next, jumper"
-
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-  />
+  <div style="margin-top: 5px">
+    <el-pagination
+        v-model:current-page="tableData.pageInfo.page"
+        v-model:page-size="tableData.pageInfo.pageSize"
+        :total="tableData.pageInfo.total"
+        :page-sizes="[10, 15, 20]"
+        layout="total, sizes, prev, pager, next, jumper"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        class="custom-pagination"
+    />
+  </div>
 
   <!--  giftId: '',
       giftLogo: '',

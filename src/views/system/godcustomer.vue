@@ -21,12 +21,12 @@
 
 
   <el-table ref="tableRef" height="300" :data="tableData.dataList" style="width: 100%">
-    <el-table-column prop="uid" label="大神编号" width="180"/>
-    <el-table-column prop="webUserInfo.nickname" label="大神名称" width="180"/>
-    <el-table-column prop="communityId" label="公会编号" width="100"/>
-    <el-table-column prop="godCommunity.communityName" label="公会名称" width="180"/>
-    <el-table-column prop="withdrawDetail" label="收款账号" width="180"/>
-    <el-table-column prop="skillOpen" label="接单资质" width="180"/>
+    <el-table-column prop="uid" label="大神编号" width="120"  align="center"/>
+    <el-table-column prop="webUserInfo.nickname" label="大神名称" width="120"  align="center"/>
+    <el-table-column prop="communityId" label="公会编号" width="100"  align="center"/>
+    <el-table-column prop="godCommunity.communityName" label="公会名称" width="120"  align="center"/>
+    <el-table-column prop="withdrawDetail" label="收款账号" width="120"  align="center"/>
+    <el-table-column prop="skillOpen" label="接单资质" width="120"  align="center"/>
     <el-table-column fixed="right" label="操作" width="180">
       <template #default="scope">
         <el-button type="primary" @click="openUpdate(scope.row)">修改</el-button>
@@ -39,6 +39,7 @@
   <!-- 
             分页组件：
     -->
+  <div style="margin-top: 5px">
   <el-pagination
 
       v-model:current-page="tableData.pageInfo.page"
@@ -50,7 +51,7 @@
       @size-change="handleSizeChange"
 
   />
-
+  </div>
 
   <!-- 修改的弹窗 -->
   <el-drawer title="修改" size="30%" v-model="updateVisable" direction="rtl">

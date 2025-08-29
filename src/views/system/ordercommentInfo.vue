@@ -122,7 +122,7 @@
       </template>
     </el-table-column>
   </el-table>
-
+  <div style="margin-top: 5px">
   <el-pagination
       v-model:current-page="tableData.pageInfo.page"
       v-model:page-size="tableData.pageInfo.pageSize"
@@ -133,6 +133,7 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
   />
+  </div>
   <el-dialog
       title="评论详情"
       v-model="commentDialogVisible"

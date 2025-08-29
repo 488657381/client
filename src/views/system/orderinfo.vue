@@ -98,7 +98,7 @@
       </template>
     </el-table-column>
   </el-table>
-
+  <div style="margin-top: 5px">
   <el-pagination
       v-model:current-page="tableData.pageInfo.page"
       v-model:page-size="tableData.pageInfo.pageSize"
@@ -109,7 +109,7 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
   />
-
+  </div>
 
   <el-drawer title="订单评论" size="45%" v-model="commentVisable" direction="btt">
     <el-table height="250" :data="commentFrom.commentList" style="width: 100%">

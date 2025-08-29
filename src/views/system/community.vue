@@ -1,6 +1,6 @@
 <template>
   <el-form ref="queryFormRef" :model="queryForm" :inline="true">
-    <el-form-item label="会长名称" prop="nickname">
+    <el-form-item label="会长名称" prop="nickname" >
       <el-input v-model="queryForm.nickname" style="width: 240px;" placeholder="nickname" clearable/>
     </el-form-item>
     <el-form-item label="公会名称" prop="communityName">
@@ -32,12 +32,12 @@
 
 
   <el-table ref="tableRef" height="300" :data="tableData.dataList" style="width: 100%">
-    <el-table-column prop="communityId" label="公会编号" width="180"/>
-    <el-table-column prop="communityName" label="公会名称" width="180"/>
-    <el-table-column prop="communityLogo" label="公会logo" width="180"/>
-    <el-table-column prop="communityLeader" label="会长编号" width="180"/>
-    <el-table-column prop="webUserInfo.nickname" label="会长名称" width="180"/>
-    <el-table-column fixed="right" label="操作" width="180">
+    <el-table-column prop="communityId" label="公会编号" width="150" align="center"/>
+    <el-table-column prop="communityName" label="公会名称" width="150" align="center"/>
+    <el-table-column prop="communityLogo" label="公会logo" width="150" align="center"/>
+    <el-table-column prop="communityLeader" label="会长编号" width="150" align="center"/>
+    <el-table-column prop="webUserInfo.nickname" label="会长名称" width="180" align="center"/>
+    <el-table-column fixed="right" label="操作" width="200" align="center">
       <template #default="scope">
         <el-button type="primary" @click="openUpdate(scope.row)">修改</el-button>
         <el-button type="primary" @click="openDelete(scope.row.communityId)">删除</el-button>
@@ -49,6 +49,7 @@
   <!--
           分页组件：
   -->
+  <div style="margin-top: 5px">
   <el-pagination
 
       v-model:current-page="tableData.pageInfo.page"
@@ -60,6 +61,7 @@
       @size-change="handleSizeChange"
 
   />
+  </div>
 
   <el-drawer title="添加" size="35%" v-model="drawerVisable" direction="rtl">
     <el-form ref="insertFromRef" :model="insertForm" label-width="70"

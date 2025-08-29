@@ -45,12 +45,12 @@
      -->
 
 
-  <el-table ref="tableRef" height="530" :data="tableData.dataList" style="width: 100%">
-    <el-table-column prop="uid" label="用户编号" width="100"/>
-    <el-table-column prop="nickname" label="用户名称" width="100"/>
-    <el-table-column prop="vipGrade" label="VIP级别" width="100"/>
-    <el-table-column prop="loadGrade" label="贵族等级" width="100"/>
-    <el-table-column prop="godStatus" label="客户类型" width="100">
+  <el-table ref="tableRef" height="500" :data="tableData.dataList" style="width: 100%">
+    <el-table-column prop="uid" label="用户编号" width="100" align="center"/>
+    <el-table-column prop="nickname" label="用户名称" width="100" align="center"/>
+    <el-table-column prop="vipGrade" label="VIP级别" width="100" align="center"/>
+    <el-table-column prop="loadGrade" label="贵族等级" width="100" align="center"/>
+    <el-table-column prop="godStatus" label="客户类型" width="100" align="center">
       <template #default="scope">
         <el-tag v-if="scope.row.godStatus == 0" type="info">
           普通用户
@@ -60,17 +60,16 @@
         </el-tag>
       </template>
     </el-table-column>
-    <el-table-column prop="ipAddress" label="IP所在地" width="100"/>
-    <el-table-column prop="hobbyGame" label="爱玩游戏" width="100"/>
-    <el-table-column prop="hobbyMusic" label="喜欢音乐" width="100"/>
-    <el-table-column fixed="right" label="操作" width="180">
+    <el-table-column prop="ipAddress" label="IP所在地" width="100" align="center"/>
+    <el-table-column prop="hobbyGame" label="爱玩游戏" width="100" align="center"/>
+    <el-table-column prop="hobbyMusic" label="喜欢音乐" width="100" align="center"/>
+    <el-table-column fixed="right" label="操作" width="180" align="center">
       <template #default="scope">
         <el-button type="primary" @click="openUpdate(scope.row)">修改</el-button>
         <el-button type="primary" @click="openDelete(scope.row.uid)">删除</el-button>
       </template>
-
     </el-table-column>
-    <el-table-column prop="lockoutStatus" label="封禁状态" width="100">
+    <el-table-column prop="lockoutStatus" label="封禁状态" width="100" align="center">
       <!-- <template #default="scope">
               <el-tag v-if="scope.row.lockoutStatus == 0" type="info">
                   封停
@@ -79,7 +78,6 @@
                   正常
               </el-tag>
           </template> -->
-
       <template #default="scope">
         <el-switch v-model="scope.row.lockoutStatus"
                    inline-prompt active-text="正常"
@@ -90,29 +88,23 @@
                     --el-switch-off-color: #ff4949"
                    @change="changeLockSwitch(scope.row)"/>
       </template>
-
-
     </el-table-column>
-
-    <el-table-column prop="lockoutTime" label="解封时间" width="200"/>
+    <el-table-column prop="lockoutTime" label="解封时间" width="200" align="center"/>
   </el-table>
-
-
   <!--
           分页组件：
   -->
-  <el-pagination
-
-      v-model:current-page="tableData.pageInfo.page"
-      v-model:page-size="tableData.pageInfo.pageSize"
-      :total="tableData.pageInfo.total"
-      :page-sizes="[10, 20, 30]"
-      layout="total,sizes, prev, pager, next,jumper"
-      @current-change="handlePageChange"
-      @size-change="handleSizeChange"
-
-  />
-
+  <div style="margin-top: 5px">
+    <el-pagination
+        v-model:current-page="tableData.pageInfo.page"
+        v-model:page-size="tableData.pageInfo.pageSize"
+        :total="tableData.pageInfo.total"
+        :page-sizes="[10, 20, 30]"
+        layout="total,sizes, prev, pager, next,jumper"
+        @current-change="handlePageChange"
+        @size-change="handleSizeChange"
+    />
+  </div>
 
   <!--
      el-dialog：自定义弹窗

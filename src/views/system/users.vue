@@ -19,16 +19,16 @@
   </el-form>
 
   <el-table height="450" :data="tableData.tableList" style="width: 100%">
-    <el-table-column prop="uid" fixed label="编号" width="180"/>
-    <el-table-column prop="username" label="用户名" width="180"/>
-    <el-table-column prop="password" label="密码" width="180">
+    <el-table-column prop="uid" fixed label="编号" width="70" align="center"/>
+    <el-table-column prop="username" label="用户名" width="100" align="center"/>
+    <el-table-column prop="password" label="密码" width="100" align="center">
       <template #default="scope">
         <el-text type="info">{{ transPassword(scope.row.password) }}</el-text>
 
       </template>
 
     </el-table-column>
-    <el-table-column prop="isvalid" label="用户状态" width="180">
+    <el-table-column prop="isvalid" label="用户状态" width="120" align="center">
       <template #default="scope">
         <el-text v-if="scope.row.isvalid == 1" type="success">在职</el-text>
         <el-text v-else-if="scope.row.isvalid == 0" type="danger">离职</el-text>
@@ -37,30 +37,30 @@
       </template>
 
     </el-table-column>
-    <el-table-column prop="createUid" label="创建人" width="180"/>
-    <el-table-column prop="createUname" label="创建名称" width="180"/>
-    <el-table-column prop="regTime" label="注册时间" width="180">
+    <el-table-column prop="createUid" label="创建人" width="120" align="center"/>
+    <el-table-column prop="createUname" label="创建名称" width="120" align="center"/>
+    <el-table-column prop="regTime" label="注册时间" width="150" align="center">
       <template #default="scope">
         <el-tag type="primary">{{ scope.row.regTime }}</el-tag>
 
       </template>
 
     </el-table-column>
-    <el-table-column prop="loginTime" label="最后登录时间" width="180">
+    <el-table-column prop="loginTime" label="最后登录时间" width="150" align="center">
       <template #default="scope">
         <el-tag type="primary">{{ scope.row.loginTime }}</el-tag>
 
       </template>
 
     </el-table-column>
-    <el-table-column prop="headImg" label="头像地址" width="180">
+    <el-table-column prop="headImg" label="头像地址" width="120" align="center">
       <template #default="scope">
         <img :src="scope.row.headImg"></img>
 
       </template>
     </el-table-column>
 
-    <el-table-column fixed="right" label="操作" width="280">
+    <el-table-column fixed="right" label="操作" width="280" align="center">
       <template #default="scope">
         <el-button type="primary" @click="openUpdate(scope.row)">修改</el-button>
         <el-button type="primary" @click="openDelete(scope.row.uid)">删除</el-button>
@@ -69,7 +69,7 @@
     </el-table-column>
 
   </el-table>
-
+  <div style="margin-top: 5px">
   <el-pagination
       v-model:current-page="tableData.pageInfo.page"
       v-model:page-size="tableData.pageInfo.pageSize"
@@ -80,7 +80,7 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
   />
-
+  </div>
 
   <el-drawer title="添加" size="30%" v-model="drawerVisable" direction="rtl">
     <el-form ref="insertFromRef" :model="insertForm" label-width="70"

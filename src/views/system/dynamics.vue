@@ -48,23 +48,24 @@
 
 
   <el-table ref="tableRef" height="580" :data="tableData.dataList" style="width: 100%">
-    <el-table-column type="selection" width="55"/>
-    <el-table-column prop="id" label="动态编号" width="180"/>
-    <el-table-column prop="uid" label="用户编号" width="180"/>
-    <el-table-column prop="webUserInfo.nickname" label="用户名称" width="180"/>
-    <el-table-column prop="content" label="动态内容" width="180">
+    <el-table-column type="selection" width="55" align="center"/>
+    <el-table-column prop="id" label="动态编号" width="140" align="center"/>
+    <el-table-column prop="uid" label="用户编号" width="140" align="center"/>
+    <el-table-column prop="webUserInfo.nickname" label="用户名称" width="140" align="center"/>
+    <el-table-column prop="content" label="动态内容" width="140" align="center">
       <template #default="scope">
         <el-link type="primary" @click="openDialog(scope.row)">{{ scope.row.content }}</el-link>
       </template>
     </el-table-column>
-    <el-table-column prop="createTime" label="动态日期" width="180"/>
-    <el-table-column prop="likenum" label="点赞数" width="180"/>
+    <el-table-column prop="createTime" label="动态日期" width="140" align="center"/>
+    <el-table-column prop="likenum" label="点赞数" width="140" align="center"/>
   </el-table>
 
 
   <!--
           分页组件：
   -->
+  <div style="margin-top: 5px">
   <el-pagination
       v-model:current-page="tableData.pageInfo.page"
       v-model:page-size="tableData.pageInfo.pageSize"
@@ -75,7 +76,7 @@
       @size-change="handleSizeChange"
 
   />
-
+  </div>
 
   <el-dialog
       v-model="updateDialogVisible" title="动态内容" width="500">

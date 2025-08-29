@@ -12,7 +12,7 @@
     </el-form-item>
   </el-form>
 
-  <el-table height="450" :data="tableData.tableList" style="width: 100%">
+  <el-table max-height="510" :data="tableData.tableList" style="width: 100%">
     <el-table-column prop="gameId" fixed label="ID" width="150" align="center"/>
     <el-table-column prop="gameName" label="游戏名称" width="200" align="center">
       <template #default="scope">
@@ -44,7 +44,7 @@
       </template>
     </el-table-column>
   </el-table>
-
+  <div style="margin-top: 5px">
   <el-pagination
       v-model:current-page="tableData.pageInfo.page"
       v-model:page-size="tableData.pageInfo.pageSize"
@@ -55,6 +55,7 @@
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
   />
+  </div>
 
   <!--  gameId: '',
       gameLogo: '',
