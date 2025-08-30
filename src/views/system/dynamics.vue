@@ -47,7 +47,7 @@
      -->
 
 
-  <el-table ref="tableRef" height="580" :data="tableData.dataList" style="width: 100%">
+  <el-table ref="tableRef" min-width="400" :data="tableData.dataList" style="width: 100%">
     <el-table-column type="selection" width="55" align="center"/>
     <el-table-column prop="id" label="动态编号" width="140" align="center"/>
     <el-table-column prop="uid" label="用户编号" width="140" align="center"/>
@@ -70,7 +70,7 @@
       v-model:current-page="tableData.pageInfo.page"
       v-model:page-size="tableData.pageInfo.pageSize"
       :total="tableData.pageInfo.total"
-      :page-sizes="[10, 20, 30]"
+      :page-sizes="[5, 10, 15]"
       layout="total,sizes, prev, pager, next,jumper"
       @current-change="handlePageChange"
       @size-change="handleSizeChange"

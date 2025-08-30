@@ -22,10 +22,10 @@
   </el-form>
   <!-- 页面展示表格 -->
   <el-table height="300px" :data="tableData.roomCategoryList" ref="tableRef" style="width: 100%">
-    <el-table-column type="selection" width="80"  align="center"/>
-    <el-table-column prop="categoryId" label="类别编号" width="150"  align="center"/>
-    <el-table-column prop="categoryName" label="类别名称" width="180"  align="center"/>
-    <el-table-column prop="parentId" label="上级编号" width="180"  align="center">
+    <el-table-column type="selection" width="80" align="center"/>
+    <el-table-column prop="categoryId" label="类别编号" width="150" align="center"/>
+    <el-table-column prop="categoryName" label="类别名称" width="180" align="center"/>
+    <el-table-column prop="parentId" label="上级编号" width="180" align="center">
       <template #default="scope">
         <el-tag v-if="scope.row.parentId==0"
                 type="success"
@@ -40,7 +40,7 @@
       </template>
     </el-table-column>
 
-    <el-table-column prop="pName" label="上级名称" width="180"  align="center">
+    <el-table-column prop="pName" label="上级名称" width="180" align="center">
       <template #default="scope">
         <el-tag v-if="scope.row.parentId==0"
                 type="success"
@@ -55,7 +55,7 @@
       </template>
 
     </el-table-column>
-    <el-table-column label="操作" width="200"  align="center">
+    <el-table-column label="操作" width="200" align="center">
       <template #default="scope">
         <el-button @click="openUpdateDialog(scope.row)" type="primary">修改</el-button>
       </template>
@@ -65,15 +65,15 @@
   </el-table>
   <!-- 分页组件 -->
   <div style="margin-top: 5px">
-  <el-pagination
-      v-model:current-page="tableData.pageInfo.page"
-      v-model:page-size="tableData.pageInfo.pageSize"
-      :page-sizes="[5, 10, 20]"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="tableData.pageInfo.total"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-  />
+    <el-pagination
+        v-model:current-page="tableData.pageInfo.page"
+        v-model:page-size="tableData.pageInfo.pageSize"
+        :page-sizes="[5, 10, 20]"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="tableData.pageInfo.total"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+    />
   </div>
 
   <!-- 新增对话框 ，里面放新增的表单-->

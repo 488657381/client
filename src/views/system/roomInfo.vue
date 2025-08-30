@@ -49,28 +49,28 @@
 
 
   <el-table height="550" :data="tableData.roomInfoList" style="width: 100%">
-    <el-table-column prop="roomId" label="大厅编号" width="100"  align="center">
+    <el-table-column prop="roomId" label="大厅编号" width="100" align="center">
       <template #default="scope">
         <el-tag type="success">{{ scope.row.roomId }}</el-tag>
       </template>
     </el-table-column>
-    <el-table-column prop="roomName" label="大厅名称" width="100"  align="center"/>
-    <el-table-column prop="roomCategoryL1" label="一级编号" width="80"  align="center"/>
-    <el-table-column prop="categoryNameLevel1" label="一级名称" width="80"  align="center">
+    <el-table-column prop="roomName" label="大厅名称" width="100" align="center"/>
+    <el-table-column prop="roomCategoryL1" label="一级编号" width="80" align="center"/>
+    <el-table-column prop="categoryNameLevel1" label="一级名称" width="80" align="center">
       <template #default="scope">
         <el-tag type="warning">{{ scope.row.categoryNameLevel1 }}</el-tag>
       </template>
     </el-table-column>
-    <el-table-column prop="roomCategoryL2" label="二级编号" width="80"  align="center"/>
-    <el-table-column prop="categoryNameLevel2" label="二级名称" width="100"  align="center">
+    <el-table-column prop="roomCategoryL2" label="二级编号" width="80" align="center"/>
+    <el-table-column prop="categoryNameLevel2" label="二级名称" width="100" align="center">
       <template #default="scope">
         <el-tag type="info">{{ scope.row.categoryNameLevel2 }}</el-tag>
       </template>
     </el-table-column>
 
-    <el-table-column prop="roomOwnerCustomer" label="房主编号" width="100"  align="center"/>
-    <el-table-column prop="nickname" label="房主名称" width="80"  align="center"/>
-    <el-table-column prop="roomNotice" label="房间公告" width="180"  align="center">
+    <el-table-column prop="roomOwnerCustomer" label="房主编号" width="100" align="center"/>
+    <el-table-column prop="nickname" label="房主名称" width="80" align="center"/>
+    <el-table-column prop="roomNotice" label="房间公告" width="180" align="center">
       <template #default="scope">
         <!-- 用容器包裹内容，通过CSS固定高度和截断 -->
         <div class="notice-content ellipsis">
@@ -78,13 +78,13 @@
         </div>
       </template>
     </el-table-column>
-    <el-table-column prop="roomPush" label="推荐状态" width="120"  align="center">
+    <el-table-column prop="roomPush" label="推荐状态" width="120" align="center">
       <template #default="scope">
         <el-tag v-if="scope.row.roomPush==1" type="success">正常</el-tag>
         <el-tag v-else-if="scope.row.roomPush==2" type="primary">首页推荐</el-tag>
       </template>
     </el-table-column>
-    <el-table-column fixed="right" prop="roomOpenStatus" label="开播状态" width="100"  align="center">
+    <el-table-column fixed="right" prop="roomOpenStatus" label="开播状态" width="100" align="center">
       <template #default="scope">
         <el-switch
             ref="OpenStatusSwitchRef"
@@ -104,7 +104,7 @@
       </template>
 
     </el-table-column>
-    <el-table-column fixed="right" prop="roomSpeechStatus" label="禁言状态" width="100"  align="center">
+    <el-table-column fixed="right" prop="roomSpeechStatus" label="禁言状态" width="100" align="center">
       <template #default="scope">
         <el-switch
             v-model="scope.row.roomSpeechStatus"
@@ -122,23 +122,23 @@
 
       </template>
     </el-table-column>
-    <el-table-column label="操作" fixed="right"  width="160" align="center">
+    <el-table-column label="操作" fixed="right" width="160" align="center">
       <template #default="scope">
-        <el-button  type="info" @click="openUpdateDialog(scope.row)">修改</el-button>
-        <el-button  type="info" @click="openDeleteTip(scope.row.roomId)">删除</el-button>
+        <el-button type="info" @click="openUpdateDialog(scope.row)">修改</el-button>
+        <el-button type="info" @click="openDeleteTip(scope.row.roomId)">删除</el-button>
       </template>
     </el-table-column>
   </el-table>
   <div style="margin-top: 5px">
-  <el-pagination
-      v-model:current-page="tableData.pageInfo.page"
-      v-model:page-size="tableData.pageInfo.pageSize"
-      :page-sizes="[8, 16, 24]"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="tableData.pageInfo.total"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-  />
+    <el-pagination
+        v-model:current-page="tableData.pageInfo.page"
+        v-model:page-size="tableData.pageInfo.pageSize"
+        :page-sizes="[8, 16, 24]"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="tableData.pageInfo.total"
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+    />
   </div>
   <!-- 公告提示框 -->
   <el-dialog

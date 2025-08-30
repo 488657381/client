@@ -22,10 +22,10 @@
 
 
   <el-table ref="tableRef" height="530" :data="tableData.dataList" style="width: 100%">
-    <el-table-column type="selection" width="55"  align="center"/>
-    <el-table-column prop="mid" label="菜单编号" width="80"  align="center"/>
-    <el-table-column prop="menuname" label="菜单名称"  align="center"/>
-    <el-table-column prop="pid" label="上级编号"  align="center">
+    <el-table-column type="selection" width="55" align="center"/>
+    <el-table-column prop="mid" label="菜单编号" width="80" align="center"/>
+    <el-table-column prop="menuname" label="菜单名称" align="center"/>
+    <el-table-column prop="pid" label="上级编号" align="center">
       <!--  通过自定义列信息 美化页面  scope.row 当前行的所有数据   -->
       <template #default="scope">
         <el-tag v-if="scope.row.pid == 0" type="success">
@@ -36,7 +36,7 @@
         </el-tag>
       </template>
     </el-table-column>
-    <el-table-column prop="pname" label="上级名称"  align="center">
+    <el-table-column prop="pname" label="上级名称" align="center">
       <template #default="scope">
         <el-tag v-if="scope.row.pid == 0" type="success">
           {{ scope.row.pname }}
@@ -46,8 +46,8 @@
         </el-tag>
       </template>
     </el-table-column>
-    <el-table-column prop="url" label="访问地址"  align="center"/>
-    <el-table-column prop="glyphicon" label="图标"  align="center">
+    <el-table-column prop="url" label="访问地址" align="center"/>
+    <el-table-column prop="glyphicon" label="图标" align="center">
       <template #default="scope">
         <el-tag type="primary">
           <el-icon>
@@ -60,7 +60,7 @@
       </template>
     </el-table-column>
     <!-- table多加一列 操作列 -->
-    <el-table-column prop="menuname" label="操作"  align="center">
+    <el-table-column prop="menuname" label="操作" align="center">
       <template #default="scope">
         <el-button type="primary" @click="openUpdateDialog(scope.row)">修改</el-button>
       </template>
@@ -68,10 +68,10 @@
 
   </el-table>
   <div style="margin-top: 5px">
-  <el-pagination v-model:current-page="tableData.pageInfo.page" v-model:page-size="tableData.pageInfo.pageSize"
-                 :total="tableData.pageInfo.total" :page-sizes="[10, 20, 30]"
-                 layout="total, sizes, prev, pager, next, jumper"
-                 @current-change="handlePageChange" @size-change="handleSizeChange"/>
+    <el-pagination v-model:current-page="tableData.pageInfo.page" v-model:page-size="tableData.pageInfo.pageSize"
+                   :total="tableData.pageInfo.total" :page-sizes="[10, 20, 30]"
+                   layout="total, sizes, prev, pager, next, jumper"
+                   @current-change="handlePageChange" @size-change="handleSizeChange"/>
   </div>
 
   <el-dialog v-model="insertDialogVisible" title="添加" width="500">

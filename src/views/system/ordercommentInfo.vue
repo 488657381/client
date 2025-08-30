@@ -123,16 +123,16 @@
     </el-table-column>
   </el-table>
   <div style="margin-top: 5px">
-  <el-pagination
-      v-model:current-page="tableData.pageInfo.page"
-      v-model:page-size="tableData.pageInfo.pageSize"
-      :total="tableData.pageInfo.total"
-      :page-sizes="[3, 6, 9]"
-      layout="total, sizes, prev, pager, next, jumper"
+    <el-pagination
+        v-model:current-page="tableData.pageInfo.page"
+        v-model:page-size="tableData.pageInfo.pageSize"
+        :total="tableData.pageInfo.total"
+        :page-sizes="[10, 15, 20]"
+        layout="total, sizes, prev, pager, next, jumper"
 
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-  />
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+    />
   </div>
   <el-dialog
       title="评论详情"

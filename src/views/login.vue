@@ -1,10 +1,13 @@
 <template>
   <el-card class="loginPanel" style="max-width: 399px">
-    <template #header>
-      <div class="card-header">
-        <img src="../assets/login.png"/>
-      </div>
-    </template>
+    <div class="card-header" style="margin-bottom: 5px">
+      <img
+          src="../assets/pic3.png"
+          alt="卡片头图"
+          class="header-image"
+          loading="lazy"
+      />
+    </div>
 
     <el-form ref="formRef" hide-required-asterisk :rules="rules" :model="loginForm" label-width="60"
              style="max-width: 380px">
@@ -142,5 +145,50 @@ const rules = reactive({
 .loginPanel {
   margin: 300px auto;
   background-color: rgba(219, 219, 219, 0.541);
+}
+.card-header {
+  /* 容器样式 */
+  position: relative;
+  height: 120px; /* 根据需求调整 */
+  overflow: hidden;
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* 渐变遮罩 */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  }
+}
+
+.header-image {
+  /* 图片样式 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
+  /* 悬停效果 */
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  /* 暗色模式适配 */
+  @media (prefers-color-scheme: dark) {
+    filter: brightness(0.9);
+  }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .card-header {
+    height: 150px;
+    border-radius: 8px 8px 0 0;
+  }
 }
 </style>

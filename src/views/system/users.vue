@@ -18,7 +18,7 @@
     </el-form-item>
   </el-form>
 
-  <el-table height="450" :data="tableData.tableList" style="width: 100%">
+  <el-table height="450"  :data="tableData.tableList" style="width: 100%">
     <el-table-column prop="uid" fixed label="编号" width="70" align="center"/>
     <el-table-column prop="username" label="用户名" width="100" align="center"/>
     <el-table-column prop="password" label="密码" width="100" align="center">
@@ -70,16 +70,16 @@
 
   </el-table>
   <div style="margin-top: 5px">
-  <el-pagination
-      v-model:current-page="tableData.pageInfo.page"
-      v-model:page-size="tableData.pageInfo.pageSize"
-      :total="tableData.pageInfo.total"
-      :page-sizes="[3, 6, 9]"
-      layout="total, sizes, prev, pager, next, jumper"
+    <el-pagination
+        v-model:current-page="tableData.pageInfo.page"
+        v-model:page-size="tableData.pageInfo.pageSize"
+        :total="tableData.pageInfo.total"
+        :page-sizes="[3, 6, 9]"
+        layout="total, sizes, prev, pager, next, jumper"
 
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-  />
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+    />
   </div>
 
   <el-drawer title="添加" size="30%" v-model="drawerVisable" direction="rtl">
