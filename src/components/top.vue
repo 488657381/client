@@ -15,7 +15,7 @@
         <el-button type="primary" plain :icon="UserFilled" class="user-btn">
           <span class="username">{{ username }}</span>
         </el-button>
-        <el-button type="primary" plain :icon="PieChart" class="action-btn"/>
+        <el-button type="primary" plain :icon="PieChart" @click="tomain" class="action-btn"/>
         <el-button type="primary" plain :icon="SwitchButton" @click="logout" class="action-btn"/>
       </el-button-group>
     </el-col>
@@ -40,6 +40,9 @@ const logout = () => {
         ElMessage.success(resp.data.msg)
         router.push('/login')
       })
+}
+const tomain =async () => {
+  await router.push('/main')
 }
 
 onMounted(() => {

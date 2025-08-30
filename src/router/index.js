@@ -15,9 +15,14 @@ const router = createRouter({
             component: () => import('../views/main.vue'),
             children: [
                 {
+                    path: '/main',
+                    component: () => import('../views/system/main.vue'),
+                    meta: {title: '主页'}
+                },
+                {
                     path: '/menus',
                     component: () => import('../views/system/menus.vue'),
-                    meta: {title: '主页'}
+                    meta: {title: '菜单管理'}
                 },
                 {
                     path: '/users',
