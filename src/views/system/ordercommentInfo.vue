@@ -61,12 +61,12 @@
   <el-table height="450" :data="tableData.tableList" style="width: 100%">
     <el-table-column prop="commentId" fixed label="评论编号" width="90" align="center"/>
     <el-table-column prop="gameName" label="游戏名称" width="120" align="center"/>
-    <el-table-column prop="orderPaymentCustomerName" label="下单用户" width="120" align="center">
+    <el-table-column prop="orderPaymentCustomerName" label="下单用户" width="100" align="center">
       <template #default="scope">
         <el-tag type="primary">{{ scope.row.orderPaymentCustomerName }}</el-tag>
       </template>
     </el-table-column>
-    <el-table-column prop="orderServeCustomerName" label="接单用户" width="120" align="center">
+    <el-table-column prop="orderServeCustomerName" label="接单用户" width="100" align="center">
       <template #default="scope">
         <el-tag type="success">{{ scope.row.orderServeCustomerName }}</el-tag>
       </template>
@@ -84,7 +84,7 @@
         </el-popover>
       </template>
     </el-table-column>
-    <el-table-column prop="commentScore" label="评论分数" width="250" align="center">
+    <el-table-column prop="commentScore" label="评论分数" width="220" align="center">
       <template #default="scope">
         <el-rate
             :model-value="Number(scope.row.commentScore)"

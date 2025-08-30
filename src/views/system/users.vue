@@ -53,7 +53,7 @@
       </template>
 
     </el-table-column>
-    <el-table-column prop="headImg" label="头像地址" width="120" align="center">
+    <el-table-column prop="headImg" label="头像详细" width="120" align="center">
       <template #default="scope">
         <img :src="scope.row.headImg"></img>
 
@@ -88,7 +88,7 @@
       <el-form-item label="用户名称" prop="username">
         <el-input v-model="insertForm.username"/>
       </el-form-item>
-      <el-form-item label="头像地址" prop="headImg">
+      <el-form-item label="头像详细" prop="headImg">
         <!-- <el-input v-model="insertForm.headImg" /> -->
         <el-upload
             class="avatar-uploader"

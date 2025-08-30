@@ -1,6 +1,6 @@
 <template>
-  <el-container class="mainPanel">
-    <el-header class="header-container">
+  <el-container class="mainPanel" >
+    <el-header class="header-container" align="center">
       <div class="header-content">
         <TOP/>
 
@@ -60,6 +60,7 @@ const toggleCollapse = () => {
 }
 
 .header-container {
+  padding-left: 250px;
   background: linear-gradient(135deg, #545c64 0%, #3a4046 190%);
   height: 96px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);

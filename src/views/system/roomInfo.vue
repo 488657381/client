@@ -49,7 +49,7 @@
 
 
   <el-table height="550" :data="tableData.roomInfoList" style="width: 100%">
-    <el-table-column prop="roomId" label="大厅编号" width="80"  align="center">
+    <el-table-column prop="roomId" label="大厅编号" width="100"  align="center">
       <template #default="scope">
         <el-tag type="success">{{ scope.row.roomId }}</el-tag>
       </template>
@@ -70,7 +70,7 @@
 
     <el-table-column prop="roomOwnerCustomer" label="房主编号" width="100"  align="center"/>
     <el-table-column prop="nickname" label="房主名称" width="80"  align="center"/>
-    <el-table-column prop="roomNotice" label="房间公告" width="80"  align="center">
+    <el-table-column prop="roomNotice" label="房间公告" width="180"  align="center">
       <template #default="scope">
         <!-- 用容器包裹内容，通过CSS固定高度和截断 -->
         <div class="notice-content ellipsis">
@@ -110,7 +110,7 @@
             v-model="scope.row.roomSpeechStatus"
             class="ml-2"
             inline-prompt
-            style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949;width: 50px;"
+            style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949;"
 
             active-text="正常"
             inactive-text="禁止"
@@ -122,10 +122,10 @@
 
       </template>
     </el-table-column>
-    <el-table-column label="操作" fixed="right"  width="260" align="center">
+    <el-table-column label="操作" fixed="right"  width="160" align="center">
       <template #default="scope">
-        <el-button style="width: 40px;" type="info" @click="openUpdateDialog(scope.row)">修改</el-button>
-        <el-button style="width: 40px;" type="info" @click="openDeleteTip(scope.row.roomId)">删除</el-button>
+        <el-button  type="info" @click="openUpdateDialog(scope.row)">修改</el-button>
+        <el-button  type="info" @click="openDeleteTip(scope.row.roomId)">删除</el-button>
       </template>
     </el-table-column>
   </el-table>
